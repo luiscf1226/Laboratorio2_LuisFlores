@@ -183,83 +183,90 @@ public class Laboratorio2_LuisFlores {
                     }
                 break;
                 case 5:
+                    boolean flag=false;
                     if(lista.isEmpty()){
+                        flag=false;
                         System.out.println("No hay Detective");
+                    }else{
+                        flag=true;
                     }
-                    System.out.println("Registrar caso: ");
-                    String lugar;
-                    int opc;
-                    String descripcion;
-                    String tipo;
-                    String detective;
-                    String estado;
-                    System.out.println("lugar de el caso: ");
-                    lugar=leer.next();
-                    System.out.println("descripcion : ");
-                    descripcion=leer.nextLine();
-                    descripcion=leer.nextLine();
-                    System.out.println("Para el estado escriba: 'resuelto' o 'pendiente' ");
-                    System.out.println("todo lo demas no sera agregado a la lista de resueltos o pendientes");
-                    System.out.println("Estado: ");
-                    estado=leer.next();
-                    System.out.println("LISTA DETECTIVES!");
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println(i+". ->   "+lista.get(i));
-                    }
-                    System.out.println("Escoja Detective: ");
-                    System.out.println("Escriba el Nombre de el Detective deseado:");
-                    detective=leer.next();
-                    System.out.println("ingrese el tipo de caso:  ");
-                    System.out.println("Ingrese numero de opcion");
-                    System.out.println("1. Homicidio");
-                    System.out.println("2. Robo");
-                    System.out.println("3. Secuestro");
-                    opc=leer.nextInt();
-                    if(opc==1){
-                        tipo=" Homicidio";
-                        listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        listahom.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        if(estado.equals("pendiente")){
-                            listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                    if(flag==true){
+                        System.out.println("Registrar caso: ");
+                        String lugar;
+                        int opc;
+                        String descripcion;
+                        String tipo;
+                        String detective;
+                        String estado;
+                        System.out.println("lugar de el caso: ");
+                        lugar=leer.next();
+                        System.out.println("descripcion : ");
+                        descripcion=leer.nextLine();
+                        descripcion=leer.nextLine();
+                        System.out.println("Para el estado escriba: 'resuelto' o 'pendiente' ");
+                        System.out.println("todo lo demas no sera agregado a la lista de resueltos o pendientes");
+                        System.out.println("Estado: ");
+                        estado=leer.next();
+                        System.out.println("LISTA DETECTIVES!");
+                        for (int i = 0; i < lista.size(); i++) {
+                            System.out.println(i+". ->   "+lista.get(i));
                         }
-                        if(estado.equals("resuelto")){
-                         listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        System.out.println("Escoja Detective: ");
+                        System.out.println("Escriba el Nombre de el Detective deseado:");
+                        detective=leer.next();
+                        System.out.println("ingrese el tipo de caso:  ");
+                        System.out.println("Ingrese numero de opcion");
+                        System.out.println("1. Homicidio");
+                        System.out.println("2. Robo");
+                        System.out.println("3. Secuestro");
+                        opc=leer.nextInt();
+                        if(opc==1){
+                            tipo=" Homicidio";
+                            listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            listahom.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            if(estado.equals("pendiente")){
+                                listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            }
+                            if(estado.equals("resuelto")){
+                             listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            }
+
+
+
+
+
                         }
-                        
-                    
-                    
-                    
-                        
-                    }
-                    if(opc==2){
-                        tipo=" Robo";
-                        listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        listarobo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        if(estado.equals("pendiente")){
-                            listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        if(opc==2){
+                            tipo=" Robo";
+                            listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            listarobo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            if(estado.equals("pendiente")){
+                                listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            }
+                            if(estado.equals("resuelto")){
+                             listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            }
+
+
+
+
                         }
-                        if(estado.equals("resuelto")){
-                         listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        if (opc==3){
+                            tipo="Secuestro";
+                            listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            listasec.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            if(estado.equals("pendiente")){
+                                listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            }
+                          if(estado.equals("resuelto")){
+                             listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                            }
+
+
+                    
+                        }else{
+                            System.out.println("No existen Detectives");
                         }
-                        
-                    
-                    
-                    
-                    }
-                    if (opc==3){
-                        tipo="Secuestro";
-                        listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        listasec.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        if(estado.equals("pendiente")){
-                            listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        }
-                      if(estado.equals("resuelto")){
-                         listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        }
-                        
-                    
-                    
-                    
                     }
                     
                     
