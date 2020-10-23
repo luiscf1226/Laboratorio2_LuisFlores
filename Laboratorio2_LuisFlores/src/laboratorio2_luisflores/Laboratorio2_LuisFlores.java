@@ -254,6 +254,7 @@ public class Laboratorio2_LuisFlores {
                 break;
                 case 6:
                     System.out.println("Modificar caso: ");
+                    System.out.println("Modificara la Lista de Todos");
                     int u=0;
                     while (u!=6){
                         System.out.println("1. Modificar lugar");
@@ -274,11 +275,7 @@ public class Laboratorio2_LuisFlores {
                                         System.out.println("Ingrese Nuevo lugar: ");
                                         b=leer.next();
                                         ((casos)listatodo.get(k)).setLugar(b);
-                                        ((casos)listarobo.get(k)).setLugar(b);
-                                        ((casos)listares.get(k)).setLugar(b);
-                                        ((casos)listasec.get(k)).setLugar(b);
-                                        ((casos)listahom.get(k)).setLugar(b);
-                                        ((casos)listapen.get(k)).setLugar(b);
+                                        
                                     }else{
                                         System.out.println("posicion no es...");
                                     }
@@ -297,11 +294,7 @@ public class Laboratorio2_LuisFlores {
                                         System.out.println("Ingrese Nuevo Descripcion: ");
                                         b2=leer.next();
                                         ((casos)listatodo.get(k2)).setDescripcion(b2);
-                                        ((casos)listarobo.get(k2)).setDescripcion(b2);
-                                        ((casos)listares.get(k2)).setDescripcion(b2);
-                                        ((casos)listasec.get(k2)).setDescripcion(b2);
-                                        ((casos)listahom.get(k2)).setDescripcion(b2);
-                                        ((casos)listapen.get(k2)).setDescripcion(b2);
+                                       
                                     }else{
                                         System.out.println("posicion no es...");
                                     }
@@ -326,29 +319,17 @@ public class Laboratorio2_LuisFlores {
                                         if(opc1==1){
                                          b3="Homicidio";
                                         ((casos)listatodo.get(k3)).setTipo(b3);
-                                        ((casos)listarobo.get(k3)).setTipo(b3);
-                                        ((casos)listares.get(k3)).setTipo(b3);
-                                        ((casos)listasec.get(k3)).setTipo(b3);
-                                        ((casos)listahom.get(k3)).setTipo(b3);
-                                        ((casos)listapen.get(k3)).setTipo(b3);
+                                        
                                         }
                                         if(opc1==2){
                                          b3="Robo";
                                         ((casos)listatodo.get(k3)).setTipo(b3);
-                                        ((casos)listarobo.get(k3)).setTipo(b3);
-                                        ((casos)listares.get(k3)).setTipo(b3);
-                                        ((casos)listasec.get(k3)).setTipo(b3);
-                                        ((casos)listahom.get(k3)).setTipo(b3);
-                                        ((casos)listapen.get(k3)).setTipo(b3);
+                                        
                                         }
                                         if(opc1==3){
                                          b3="Secuestro";
                                         ((casos)listatodo.get(k3)).setTipo(b3);
-                                        ((casos)listarobo.get(k3)).setTipo(b3);
-                                        ((casos)listares.get(k3)).setTipo(b3);
-                                        ((casos)listasec.get(k3)).setTipo(b3);
-                                        ((casos)listahom.get(k3)).setTipo(b3);
-                                        ((casos)listapen.get(k3)).setTipo(b3);
+                                        
                                         }
           
                                     }else{
@@ -374,11 +355,7 @@ public class Laboratorio2_LuisFlores {
                                         System.out.println("Ingrese Nuevo Detective: ");
                                         b4=leer.next();
                                         ((casos)listatodo.get(k4)).setDetective(b4);
-                                        ((casos)listarobo.get(k4)).setDetective(b4);
-                                        ((casos)listares.get(k4)).setDetective(b4);
-                                        ((casos)listasec.get(k4)).setDetective(b4);
-                                        ((casos)listahom.get(k4)).setDetective(b4);
-                                        ((casos)listapen.get(k4)).setDetective(b4);
+                                        
                                     }else{
                                         System.out.println("posicion no es...");
                                     }
@@ -400,18 +377,13 @@ public class Laboratorio2_LuisFlores {
                                         System.out.println("Ingrese Nuevo Estado: ");
                                         b5=leer.next();
                                         if(b5.equals("pendiente")){
-                                            ((casos)listasec.get(k5)).setLugar(b5);
-                                            ((casos)listahom.get(k5)).setLugar(b5);
-                                            ((casos)listapen.get(k5)).setLugar(b5);
+                                           
                                             ((casos)listatodo.get(k5)).setLugar(b5);
-                                            ((casos)listarobo.get(k5)).setLugar(b5);
+                                            
                                         }
                                         if(b5.equals("resuelto")){
                                             ((casos)listatodo.get(k5)).setLugar(b5);
-                                            ((casos)listarobo.get(k5)).setLugar(b5);
-                                            ((casos)listasec.get(k5)).setLugar(b5);
-                                            ((casos)listahom.get(k5)).setLugar(b5);
-                                            ((casos)listapen.get(k5)).setLugar(b5);
+                                          
                                         }
                                     }else{
                                         System.out.println("posicion no es...");
@@ -427,6 +399,20 @@ public class Laboratorio2_LuisFlores {
                     for (int i = 0; i < listatodo.size(); i++) {
                         System.out.println(i+". ->   "+listatodo.get(i));
                      }
+                break;
+                case 8:
+                     
+                    System.out.println("LISTA CASOS RESUELTOS!");
+                    for (int i = 0; i < listares.size(); i++) {
+                        System.out.println(i+". ->   "+listares.get(i));
+                     }
+                break;
+                case 9:
+                    System.out.println("LISTA CASOS PENDIENTES!");
+                    for (int i = 0; i < listapen.size(); i++) {
+                        System.out.println(i+". ->   "+listapen.get(i));
+                     }
+
                 break;
             }//fin switch
         }//fin while
