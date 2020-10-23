@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 public class Laboratorio2_LuisFlores {
 
-    static ArrayList <Detectives> lista=new ArrayList();
-    static ArrayList <casos> listatodo=new ArrayList();
-    static ArrayList <casos> listahom=new ArrayList();
-    static ArrayList <casos> listarobo=new ArrayList();
-    static ArrayList <casos> listasec=new ArrayList();
-    static ArrayList <casos> listares=new ArrayList();
-    static ArrayList <casos> listapen=new ArrayList();
+    static ArrayList <Detectives> lista=new ArrayList();//lista detectives
+    static ArrayList <casos> listatodo=new ArrayList();//lista todo casos
+    static ArrayList <casos> listahom=new ArrayList();//lista homicidios
+    static ArrayList <casos> listarobo=new ArrayList();//lista robo
+    static ArrayList <casos> listasec=new ArrayList();//lista secuestros
+    static ArrayList <casos> listares=new ArrayList();//lista resueltos
+    static ArrayList <casos> listapen=new ArrayList();// lista pendientes
     public static void main(String[] args) {
         Scanner leer=new Scanner(System.in);
         int opcion=0;
@@ -60,11 +60,13 @@ public class Laboratorio2_LuisFlores {
                     if (g>=0 && g<lista.size()) {
                         lista.remove(g);
                         System.out.println("eliminado");
+                       
                         String salida="";
                         for (Object t : lista) {
                             salida+=""+lista.indexOf(t)+"- "+t+"\n";
                         }
                         System.out.println(salida);
+                        System.out.println("cambiando asignacion casos segun nivel......");
                     }else{
                          System.out.println("fuera de rango");
                     }
@@ -205,8 +207,10 @@ public class Laboratorio2_LuisFlores {
                         System.out.println(i+". ->   "+lista.get(i));
                     }
                     System.out.println("Escoja Detective: ");
+                    System.out.println("Escriba el Nombre de el Detective deseado:");
                     detective=leer.next();
                     System.out.println("ingrese el tipo de caso:  ");
+                    System.out.println("Ingrese numero de opcion");
                     System.out.println("1. Homicidio");
                     System.out.println("2. Robo");
                     System.out.println("3. Secuestro");
@@ -215,38 +219,47 @@ public class Laboratorio2_LuisFlores {
                         tipo=" Homicidio";
                         listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
                         listahom.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        if(estado.equals("resuelto")){
-                        listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
                         if(estado.equals("pendiente")){
-                        listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                    }
+                            listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        }
+                        if(estado.equals("resuelto")){
+                         listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        }
+                        
                     
-                    }
+                    
+                    
                         
                     }
                     if(opc==2){
                         tipo=" Robo";
                         listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
                         listarobo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        if(estado.equals("resuelto")){
-                        listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
                         if(estado.equals("pendiente")){
-                        listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                    }
+                            listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        }
+                        if(estado.equals("resuelto")){
+                         listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        }
+                        
                     
-                    }
+                    
+                    
                     }
                     if (opc==3){
                         tipo="Secuestro";
                         listatodo.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
                         listasec.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                        if(estado.equals("resuelto")){
-                        listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
                         if(estado.equals("pendiente")){
-                        listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
-                    }
+                            listapen.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        }
+                      if(estado.equals("resuelto")){
+                         listares.add(new casos(lugar,  descripcion,  tipo, detective,  estado));
+                        }
+                        
                     
-                    }
+                    
+                    
                     }
                     
                     
@@ -395,9 +408,25 @@ public class Laboratorio2_LuisFlores {
                     }
                 break;
                 case 7:
+                    System.out.println("Total casos sin Orden");
                     System.out.println("LISTA CASOS!");
                     for (int i = 0; i < listatodo.size(); i++) {
                         System.out.println(i+". ->   "+listatodo.get(i));
+                     }
+                    System.out.println("");
+                    System.out.println(" ");
+                    System.out.println("-----------------------------------");
+                    System.out.println("HOMICIDIOS");
+                    for (int i = 0; i < listahom.size(); i++) {
+                        System.out.println(i+". ->   "+listahom.get(i));
+                     }
+                    System.out.println("SECUESTROS");
+                    for (int i = 0; i < listasec.size(); i++) {
+                        System.out.println(i+". ->   "+listasec.get(i));
+                     }
+                    System.out.println("ROBOS");
+                    for (int i = 0; i < listarobo.size(); i++) {
+                        System.out.println(i+". ->   "+listarobo.get(i));
                      }
                 break;
                 case 8:
