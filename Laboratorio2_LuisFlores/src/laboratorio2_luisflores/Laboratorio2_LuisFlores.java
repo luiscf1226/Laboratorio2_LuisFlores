@@ -325,30 +325,30 @@ public class Laboratorio2_LuisFlores {
                                         int opc1=leer.nextInt();
                                         if(opc1==1){
                                          b3="Homicidio";
-                                        ((casos)listatodo.get(k3)).setDescripcion(b3);
-                                        ((casos)listarobo.get(k3)).setDescripcion(b3);
-                                        ((casos)listares.get(k3)).setDescripcion(b3);
-                                        ((casos)listasec.get(k3)).setDescripcion(b3);
-                                        ((casos)listahom.get(k3)).setDescripcion(b3);
-                                        ((casos)listapen.get(k3)).setDescripcion(b3);
+                                        ((casos)listatodo.get(k3)).setTipo(b3);
+                                        ((casos)listarobo.get(k3)).setTipo(b3);
+                                        ((casos)listares.get(k3)).setTipo(b3);
+                                        ((casos)listasec.get(k3)).setTipo(b3);
+                                        ((casos)listahom.get(k3)).setTipo(b3);
+                                        ((casos)listapen.get(k3)).setTipo(b3);
                                         }
                                         if(opc1==2){
                                          b3="Robo";
-                                        ((casos)listatodo.get(k3)).setDescripcion(b3);
-                                        ((casos)listarobo.get(k3)).setDescripcion(b3);
-                                        ((casos)listares.get(k3)).setDescripcion(b3);
-                                        ((casos)listasec.get(k3)).setDescripcion(b3);
-                                        ((casos)listahom.get(k3)).setDescripcion(b3);
-                                        ((casos)listapen.get(k3)).setDescripcion(b3);
+                                        ((casos)listatodo.get(k3)).setTipo(b3);
+                                        ((casos)listarobo.get(k3)).setTipo(b3);
+                                        ((casos)listares.get(k3)).setTipo(b3);
+                                        ((casos)listasec.get(k3)).setTipo(b3);
+                                        ((casos)listahom.get(k3)).setTipo(b3);
+                                        ((casos)listapen.get(k3)).setTipo(b3);
                                         }
                                         if(opc1==3){
                                          b3="Secuestro";
-                                        ((casos)listatodo.get(k3)).setDescripcion(b3);
-                                        ((casos)listarobo.get(k3)).setDescripcion(b3);
-                                        ((casos)listares.get(k3)).setDescripcion(b3);
-                                        ((casos)listasec.get(k3)).setDescripcion(b3);
-                                        ((casos)listahom.get(k3)).setDescripcion(b3);
-                                        ((casos)listapen.get(k3)).setDescripcion(b3);
+                                        ((casos)listatodo.get(k3)).setTipo(b3);
+                                        ((casos)listarobo.get(k3)).setTipo(b3);
+                                        ((casos)listares.get(k3)).setTipo(b3);
+                                        ((casos)listasec.get(k3)).setTipo(b3);
+                                        ((casos)listahom.get(k3)).setTipo(b3);
+                                        ((casos)listapen.get(k3)).setTipo(b3);
                                         }
           
                                     }else{
@@ -360,8 +360,73 @@ public class Laboratorio2_LuisFlores {
                                 }
                                 
                             break;
-                        }
+                            case 4:
+                                int k4;
+                                String b4;
+                                System.out.println("Posicion caso a modificar: ");
+                                k4=leer.nextInt();
+                                if( k4>=0&&k4<listatodo.size()){
+                                    if(listatodo.get(k4)instanceof casos){
+                                        System.out.println("LISTA DETECTIVES!");
+                                        for (int i = 0; i < lista.size(); i++) {
+                                            System.out.println(i+". ->   "+lista.get(i));
+                                        }
+                                        System.out.println("Ingrese Nuevo Detective: ");
+                                        b4=leer.next();
+                                        ((casos)listatodo.get(k4)).setDetective(b4);
+                                        ((casos)listarobo.get(k4)).setDetective(b4);
+                                        ((casos)listares.get(k4)).setDetective(b4);
+                                        ((casos)listasec.get(k4)).setDetective(b4);
+                                        ((casos)listahom.get(k4)).setDetective(b4);
+                                        ((casos)listapen.get(k4)).setDetective(b4);
+                                    }else{
+                                        System.out.println("posicion no es...");
+                                    }
+                                } else{
+                                    System.out.println("posicion fuera rango: ");
+                                    
+                                }
+                                
+                            break;
+                            case 5:
+                                int k5;
+                                String b5;
+                                System.out.println("Posicion caso a modificar: ");
+                                k5=leer.nextInt();
+                                if( k5>=0&&k5<listatodo.size()){
+                                    if(listatodo.get(k5)instanceof casos){
+                                        System.out.println("Para el estado escriba: 'resuelto' o 'pendiente' ");
+                                        System.out.println("todo lo demas no sera agregado a la lista de resuelto o pendiente");
+                                        System.out.println("Ingrese Nuevo Estado: ");
+                                        b5=leer.next();
+                                        if(b5.equals("pendiente")){
+                                            ((casos)listasec.get(k5)).setLugar(b5);
+                                            ((casos)listahom.get(k5)).setLugar(b5);
+                                            ((casos)listapen.get(k5)).setLugar(b5);
+                                            ((casos)listatodo.get(k5)).setLugar(b5);
+                                            ((casos)listarobo.get(k5)).setLugar(b5);
+                                        }
+                                        if(b5.equals("resuelto")){
+                                            ((casos)listatodo.get(k5)).setLugar(b5);
+                                            ((casos)listarobo.get(k5)).setLugar(b5);
+                                            ((casos)listasec.get(k5)).setLugar(b5);
+                                            ((casos)listahom.get(k5)).setLugar(b5);
+                                            ((casos)listapen.get(k5)).setLugar(b5);
+                                        }
+                                    }else{
+                                        System.out.println("posicion no es...");
+                                    }
+                                } else{
+                                    System.out.println("posicion fuera rango: ");
+                                }
                     }//fin switch
+                    }
+                break;
+                case 7:
+                    System.out.println("LISTA CASOS!");
+                    for (int i = 0; i < listatodo.size(); i++) {
+                        System.out.println(i+". ->   "+listatodo.get(i));
+                     }
                 break;
             }//fin switch
         }//fin while

@@ -60,7 +60,7 @@ public class casos {
     }
     //adm
     public String toString(){
-        return "lugar caso: "+lugar+ " descripcion: "+descripcion+ " tipo: "+ tipo+ " detective: "+detective+ " estado: "+estado;
+        return "lugar caso: "+lugar+ " , descripcion: "+descripcion+ " , tipo: "+ tipo+ ",  detective: "+detective+ " , estado: "+estado;
     }
 }
 

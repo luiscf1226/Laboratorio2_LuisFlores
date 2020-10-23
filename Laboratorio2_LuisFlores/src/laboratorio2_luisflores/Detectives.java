@@ -61,7 +61,7 @@ public class Detectives {
     }
     //adm
     public String toString (){
-        return "nombre detective: "+nombre+ " edad: "+edad+ " nacionalidad: "+ nacionalidad+ "tiempo laboral: "+years+ " nivel: " +nivel;
+        return "nombre detective: "+nombre+ " , edad: "+edad+ " , nacionalidad: "+ nacionalidad+ ", tiempo laboral: "+years+ " , nivel: " +nivel;
                 
     }
     
